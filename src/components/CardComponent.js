@@ -1,6 +1,12 @@
 import { gql, useQuery } from '@apollo/client'
 
 import Rocket from "../assets/icons/Rocket@2x.svg"
+import {
+  CardContainer,
+  CardInfo,
+  CardHeader,
+  ButtonFlights
+} from "./styles/Card.styled copy"
 
 export default function CardComponent() {
 
@@ -10,8 +16,6 @@ export default function CardComponent() {
         nodes{
           id
           name
-          latitude
-          longitude
           description
           planet{
             name
@@ -25,37 +29,20 @@ export default function CardComponent() {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error</p>
 
-    return data?.spaceCenters.nodes.map(({ id, name, planet }) => (
-      <div key={id} style={{
-            margin: '40px 20px',
-            boxShadow: '0px 0px 5px #8C8C8C'
-      }}>
-        <div style={{
-          padding: '20px'
-          }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }}>
+    return data.spaceCenters.nodes.map(({ id, name, planet, description }) => (
+      <CardContainer>
+        <CardInfo>
+          <CardHeader>
             <h3>{name}</h3>
             <img src={Rocket} alt="Rocket" />
-          </div>
-          <div>{planet.name}</div>
+          </CardHeader>
+          <b>{planet.name}</b>
           <br/>
-          <div>12 departure planned today</div>
           <br/>
-        </div>
-        <button style={{
-          background: 'black',
-          color: 'silver',
-          textAlign: 'center',
-          padding: '15px 10px',
-          fontSize: 12,
-          fontWeight: 'light',
-          width: '100%',
-          cursor: 'pointer'
-        }}>SEE ALL FLIGHTS</button>
-      </div>
+          <div>{description}</div>
+          <br/>
+        </CardInfo>
+        <ButtonFlights>SEE ALL FLIGHTS</ButtonFlights>
+      </CardContainer>
     ))
 }
