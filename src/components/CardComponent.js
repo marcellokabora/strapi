@@ -2,11 +2,10 @@ import { gql, useQuery } from '@apollo/client'
 
 import Rocket from "../assets/icons/Rocket@2x.svg"
 
-
-export default function SpaceCenters() {
+export default function CardComponent() {
 
   const GET_LOCATIONS = gql`
-  query GetLocations {
+  query {
       spaceCenters {
         nodes{
           id
@@ -19,15 +18,14 @@ export default function SpaceCenters() {
           }
         }
       }
-    } 
+    }
   `
-
     const { loading, error, data } = useQuery(GET_LOCATIONS)
 
     if (loading) return <p>Loading...</p>
-    if (error) return <p>Error :(</p>
+    if (error) return <p>Error</p>
 
-    return data.spaceCenters.nodes.map(({ id, name, planet }) => (
+    return data?.spaceCenters.nodes.map(({ id, name, planet }) => (
       <div key={id} style={{
             margin: '40px 20px',
             boxShadow: '0px 0px 5px #8C8C8C'
@@ -41,7 +39,7 @@ export default function SpaceCenters() {
             justifyContent: 'space-between'
           }}>
             <h3>{name}</h3>
-            <img src={Rocket} alt="Arrow" />
+            <img src={Rocket} alt="Rocket" />
           </div>
           <div>{planet.name}</div>
           <br/>
@@ -53,7 +51,7 @@ export default function SpaceCenters() {
           color: 'silver',
           textAlign: 'center',
           padding: '15px 10px',
-          fontSize: 15,
+          fontSize: 12,
           fontWeight: 'light',
           width: '100%',
           cursor: 'pointer'

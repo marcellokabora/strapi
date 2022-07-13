@@ -3,7 +3,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import styled from "styled-components"
 
 import GlobalStyles from './components/styles/Global'
-import SpaceCenters from './components/SpaceCenters'
+import CardComponent from './components/CardComponent'
+import MapComponent from './components/MapComponent'
 
 import Arrow from "./assets/icons/Arrow.svg"
 
@@ -28,10 +29,6 @@ function App() {
     display: flex;
     flex-direction: column;
   `
-  const OverflowContainer = styled.div`
-    overflow: auto;
-    height: 100%;
-  `
   return (
     <ApolloProvider client={client}>
       <GlobalStyles/>
@@ -42,17 +39,20 @@ function App() {
             display: 'flex',
             alignItems: 'center',
             overflow: 'hidden',
-            boxShadow: '0px 0px 5px black',
+            boxShadow: '0px 0px 10px grey',
             backgroundColor: 'white',
           }}>
             <h2 style={{
               paddingLeft: 20,
-              letterSpacing: 5
+              letterSpacing: 2
               }}>SPACE TRIPS</h2>
           </div>
-            <OverflowContainer>
-              <SpaceCenters />
-            </OverflowContainer>
+            <div style={{
+              overflow: 'auto',
+              height: '100%'
+            }}>
+              <CardComponent />
+            </div>
         </FlexContainer>
         <FlexContainer width="4" bg="black" color="white">
           <div style={{
@@ -60,8 +60,8 @@ function App() {
             display: 'flex',
             alignItems: 'center',
             overflow: 'hidden',
-            boxShadow: '0px 0px 5px white',
-            backgroundColor: '#484848',
+            boxShadow: '0px 0px 10px #D2D2D2',
+            backgroundColor: '#404040',
           }}>
             <div style={{
               display: 'flex',
@@ -84,14 +84,19 @@ function App() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
+              cursor: 'pointer'
             }}>
               <img src={Arrow} alt="Arrow" />
             </div>
           </div>
-          <OverflowContainer>
-            {/* <SpaceCenters /> */}
-          </OverflowContainer>
+            <div style={{
+              height: '100%',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+            <MapComponent />
+          </div>
         </FlexContainer>
       </DashBoard>
     </ApolloProvider>
