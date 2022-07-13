@@ -30,7 +30,7 @@ export default function CardComponent() {
     if (error) return <p>Error</p>
 
     return data.spaceCenters.nodes.map(({ id, name, planet, description }) => (
-      <CardContainer>
+      <CardContainer key={id}>
         <CardInfo>
           <CardHeader>
             <h3>{name}</h3>

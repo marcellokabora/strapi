@@ -1,6 +1,6 @@
-import CardComponent from './CardComponent'
-import MapComponent from './MapComponent'
-import SearchComponent from './SearchComponent'
+import CardComponent from '../../components/Card.component'
+import MapComponent from '../../components/Map.component'
+import SearchComponent from '../../components/Search.component'
 
 import {
   DashBoard, 
@@ -13,11 +13,11 @@ import {
   FlexW100,
   MapHeaderTitle,
   MapHeaderArrow
-} from './styles/Dashboard.styled'
+} from './Dashboard.styled'
 
-import Arrow from "../assets/icons/Arrow.svg"
+import Arrow from "../../assets/icons/Arrow.svg"
 
-export default function DashboardComponent() {
+export default function PageDashBoard() {
   return (
       <DashBoard>
         <FlexContainer1>
@@ -32,7 +32,7 @@ export default function DashboardComponent() {
           <MapHeader>
             <FlexW100>
               <MapHeaderTitle>Departure</MapHeaderTitle>
-              {/* <SearchComponent/> */}
+              <SearchComponent/>
               <MapHeaderTitle>Time</MapHeaderTitle>
               <div>0/20/2019 - 12.45am</div>
             </FlexW100>
@@ -41,7 +41,7 @@ export default function DashboardComponent() {
             </MapHeaderArrow>
           </MapHeader>
             <MapContainer>
-              {/* <MapComponent /> */}
+              <MapComponent />
           </MapContainer>
         </FlexContainer2>
       </DashBoard>
