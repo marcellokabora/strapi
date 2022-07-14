@@ -17,7 +17,7 @@ import {
 
 import Arrow from "../../assets/icons/Arrow.svg"
 
-export default function PageDashBoard() {
+export default function LayoutDashBoard() {
   return (
       <DashBoard>
         <FlexContainer1>

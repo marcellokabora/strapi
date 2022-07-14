@@ -6,7 +6,7 @@ import {
   CardInfo,
   CardHeader,
   ButtonFlights
-} from "./styles/Card.styled copy"
+} from "./styles/Card.styled"
 
 export default function CardComponent() {
 
@@ -36,11 +36,8 @@ export default function CardComponent() {
             <h3>{name}</h3>
             <img src={Rocket} alt="Rocket" />
           </CardHeader>
-          <b>{planet.name}</b>
-          <br/>
-          <br/>
-          <div>{description}</div>
-          <br/>
+          <p><b>{planet.name}</b></p>
+          <p>{description}</p>
         </CardInfo>
         <ButtonFlights>SEE ALL FLIGHTS</ButtonFlights>
       </CardContainer>

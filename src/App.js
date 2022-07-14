@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 import GlobalStyles from './components/styles/Global'
 
-import PageDashBoard from './layout/Dashboard/Dashboard'
+import LayoutDashBoard from './layout/Dashboard/Dashboard'
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <GlobalStyles/>
-      <PageDashBoard/>
+      <LayoutDashBoard/>
     </ApolloProvider>
   )
 }

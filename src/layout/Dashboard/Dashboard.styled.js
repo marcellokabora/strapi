@@ -34,7 +34,6 @@ export const MapHeader = styled.div`
     height: 80px;
     display: flex;
     align-items: center;
-    overflow: hidden;
     box-shadow: 0px 0px 5px grey;
     background-color: #404040;
     z-index: 1;
@@ -56,7 +55,7 @@ export const MapHeaderTitle = styled.h3`
 export const MapHeaderArrow = styled.h3`
     background-color: #E8BF36;
     height: 100%;
-    padding: 20px 30px;
+    padding: 0px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;

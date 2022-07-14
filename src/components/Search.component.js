@@ -6,6 +6,10 @@ import {
   SearchBox,
   Highlight,
 } from 'react-instantsearch-dom';
+import {
+  SearchContainer,
+  SearchPanel
+} from './styles/Search.styled';
 
 const searchClient = algoliasearch(
   'UORHJCOG49',
@@ -14,10 +18,14 @@ const searchClient = algoliasearch(
 
 export default function SearchComponent() {
     return (
-      <InstantSearch indexName="space-centers" searchClient={searchClient}>
-          <SearchBox />
-          <Hits hitComponent={Hit} />
-      </InstantSearch>
+      <SearchContainer>
+        <InstantSearch indexName="space-centers" searchClient={searchClient}>
+          <SearchBox/>
+          <SearchPanel>
+            <Hits hitComponent={Hit} />
+          </SearchPanel>
+        </InstantSearch>
+      </SearchContainer>
     );
 }
 
@@ -25,12 +33,12 @@ function Hit(props) {
   return (
     <div>
       <div className="hit-name">
-        <Highlight attribute="name" hit={props.hit} />
+        <Highlight attribute="name" hit={props.name} />
       </div>
-      <div className="hit-description">
+      {/* <div className="hit-description">
         <Highlight attribute="description" hit={props.hit} />
       </div>
-      <div className="hit-price">${props.hit.price}</div>
+      <div className="hit-price">${props.hit.price}</div> */}
     </div>
   );
 }
