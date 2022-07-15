@@ -25,3 +25,7 @@ export const ButtonFlights = styled.button`
     width: 100%;
     cursor: pointer;
 `
+export const AsideContainer = styled.div`
+    overflow: auto;
+    height: 100%;
+`

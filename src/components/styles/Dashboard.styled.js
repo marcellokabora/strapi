@@ -26,10 +26,6 @@ export const AsideHeader = styled.div`
     background-color: 'white';
     text-align: center;
 `
-export const AsideContainer = styled.div`
-    overflow: auto;
-    height: 100%;
-`
 export const MapHeader = styled.div`
     height: 80px;
     display: flex;

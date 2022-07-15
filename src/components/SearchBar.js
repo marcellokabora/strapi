@@ -9,14 +9,14 @@ import {
 import {
   SearchContainer,
   SearchPanel
-} from './styles/Search.styled';
+} from './styles/SearchBar.styled';
 
 const searchClient = algoliasearch(
   'UORHJCOG49',
   '74fb98e8049e4753ce230f010774b425'
 );
 
-export default function SearchComponent() {
+export default function SearchBar() {
     return (
       <SearchContainer>
         <InstantSearch indexName="space-centers" searchClient={searchClient}>
