@@ -51,7 +51,7 @@ export default function DashBoardComponent() {
         <AsideHeader>
           <h2>SPACE TRIPS</h2>
         </AsideHeader>
-            <List data={data} tripSelected={tripSelected} setTripSelected={setTripSelected}/>
+        <List data={data} tripSelected={tripSelected} setTripSelected={setTripSelected}/>
       </FlexContainer1>
       <FlexContainer2>
         <MapHeader>

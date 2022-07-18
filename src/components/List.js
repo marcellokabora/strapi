@@ -17,7 +17,7 @@ export default function ListComponent({data, tripSelected, setTripSelected}) {
       behavior:"smooth",
     })
     document.querySelectorAll('.rocket').forEach(rocket => rocket.classList.remove('bounce-3'))
-    document.getElementById(`Rocket${tripSelected}`).classList.add("bounce-3");
+    document.getElementById(`Rocket${tripSelected}`).classList.add("bounce-3")
   }
 
   return (
@@ -26,7 +26,10 @@ export default function ListComponent({data, tripSelected, setTripSelected}) {
         <CardContainer 
           key={id}
           id={`Trip${id}`}
-          onClick={e => {setTripSelected(data.id)}}
+          role="listitem"
+          // onClick={e => {
+            // setTripSelected(id)
+          // }}
         >
           <CardInfo>
             <CardHeader>
